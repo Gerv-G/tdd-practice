@@ -8,8 +8,8 @@ class DollarTest extends Specification {
             Dollar five = new Dollar(5)
 
         expect:
-            five.times(2).amount == 10
-            five.times(3).amount == 15
+            five.times(2) == new Dollar(10)
+            five.times(3) == new Dollar(15)
     }
 
     def testEquality() {
