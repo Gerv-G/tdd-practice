@@ -7,14 +7,14 @@ class DollarTest extends Specification {
         given:
             Dollar five = new Dollar(5)
 
-        when:
-            Dollar product = five.times(2)
-        then:
-            product.amount == 10
+        expect:
+            five.times(2).amount == 10
+            five.times(3).amount == 15
+    }
 
-        when:
-            product = five.times(3)
-        then:
-            product.amount == 15
+    def testEquality() {
+        expect:
+            new Dollar(5) == new Dollar(5)
+            new Dollar(5) != new Dollar(6)
     }
 }
