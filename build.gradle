@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "io.franzbecker:gradle-lombok:2.1"
+    }
+}
+
+plugins {
+    id 'groovy'
+    id 'java'
+}
+apply plugin: 'io.franzbecker.gradle-lombok'
+
+group 'com.gervin'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+configurations {
+//    runtimeClasspath {
+//        extendsFrom developmentOnly
+//    }
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok'
+//    testImplementation 'org.spockframework:spock-spring:1.1-groovy-2.4'
+    testImplementation 'org.spockframework:spock-core:1.1-groovy-2.4'
+    testImplementation 'org.codehaus.groovy:groovy-all:2.4'
+}
