@@ -4,10 +4,17 @@ import spock.lang.Specification
 
 class DollarTest extends Specification {
     def testMultiplication() {
-        Dollar five = new Dollar(5)
-        five.times(2)
+        given:
+            Dollar five = new Dollar(5)
 
-        expect:
-            five.amount == 10
+        when:
+            Dollar product = five.times(2)
+        then:
+            product.amount == 10
+
+        when:
+            product = five.times(3)
+        then:
+            product.amount == 15
     }
 }
