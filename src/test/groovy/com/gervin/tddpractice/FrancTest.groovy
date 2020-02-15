@@ -11,4 +11,10 @@ class FrancTest extends Specification {
             five.times(2) == new Franc(10)
             five.times(3) == new Franc(15)
     }
+
+    def testEquality() {
+        expect:
+            new Franc(5) == new Franc(5)
+            new Franc(5) != new Franc(6)
+    }
 }
