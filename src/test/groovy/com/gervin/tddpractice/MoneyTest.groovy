@@ -7,4 +7,10 @@ class MoneyTest extends Specification {
         expect:
             Money.dollar(5) != Money.franc(5)
     }
+
+    def testDifferentClassEquality() {
+        expect:
+            new Money(10, "CHF").equals(new Franc(10, "CHF"))
+            new Money(10, "USD").equals(new Franc(10, "USD"))
+    }
 }
