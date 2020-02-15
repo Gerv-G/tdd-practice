@@ -5,16 +5,16 @@ import spock.lang.Specification
 class DollarTest extends Specification {
     def testMultiplication() {
         given:
-            Dollar five = new Dollar(5)
+            Money five = Money.dollar(5)
 
         expect:
-            five.times(2) == new Dollar(10)
-            five.times(3) == new Dollar(15)
+            five.times(2) == Money.dollar(10)
+            five.times(3) == Money.dollar(15)
     }
 
     def testEquality() {
         expect:
-            new Dollar(5) == new Dollar(5)
-            new Dollar(5) != new Dollar(6)
+            Money.dollar(5) == Money.dollar(5)
+            Money.dollar(5) != Money.dollar(6)
     }
 }

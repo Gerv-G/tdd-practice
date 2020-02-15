@@ -5,6 +5,6 @@ import spock.lang.Specification
 class MoneyTest extends Specification {
     def testEquality() {
         expect:
-            new Dollar(5) != new Franc(5)
+            Money.dollar(5) != Money.franc(5)
     }
 }

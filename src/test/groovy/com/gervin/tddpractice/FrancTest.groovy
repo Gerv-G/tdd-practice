@@ -5,16 +5,16 @@ import spock.lang.Specification
 class FrancTest extends Specification {
     def testFrancMultiplication() {
         given:
-            Franc five = new Franc(5)
+            Money five = Money.franc(5)
 
         expect:
-            five.times(2) == new Franc(10)
-            five.times(3) == new Franc(15)
+            five.times(2) == Money.franc(10)
+            five.times(3) == Money.franc(15)
     }
 
     def testEquality() {
         expect:
-            new Franc(5) == new Franc(5)
-            new Franc(5) != new Franc(6)
+            Money.franc(5) == Money.franc(5)
+            Money.franc(5) != Money.franc(6)
     }
 }
